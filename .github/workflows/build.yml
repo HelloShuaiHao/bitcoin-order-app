@@ -62,9 +62,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.WORKSHOP6_GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
       - name: Deploy
         run: |
-          npm run deploy
-
+          npm run deploy 
